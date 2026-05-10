@@ -6050,10 +6050,11 @@ if (maxDelayValue && this.appData.sendSettings) {
             this.appData.waitingForReply = true;
             this.startTypingIndicator();
             
-            const minDelay = (this.appData.sendSettings?.minReplyDelay || 1.5) * 1000;
-            const maxDelay = (this.appData.sendSettings?.maxReplyDelay || 3.5) * 1000;
-            const delay = minDelay + Math.random() * (maxDelay - minDelay);
-            
+            const minDelaySeconds = this.appData.sendSettings?.minReplyDelay || 1.5;
+const maxDelayMinutes = this.appData.sendSettings?.maxReplyDelayMinutes || 3;
+const minDelay = minDelaySeconds * 1000;
+const maxDelay = maxDelayMinutes * 60 * 1000;
+const delay = minDelay + Math.random() * (maxDelay - minDelay);
             setTimeout(() => {
                 if (this.appData.tarotSettings?.enabled && this.appData.tarotSettings.customPhrases?.length > 0) {
                     this.generateTarotReply('reply');
@@ -6386,8 +6387,9 @@ if (maxDelayValue && this.appData.sendSettings) {
         this.appData.isTyping = true;
         this.renderMessages();
         
-        const minDelay = (this.appData.sendSettings?.minReplyDelay || 1.5) * 1000;
+        const minDelaySeconds = this.appData.sendSettings?.minReplyDelay || 1.5;
 const maxDelayMinutes = this.appData.sendSettings?.maxReplyDelayMinutes || 3;
+const minDelay = minDelaySeconds * 1000;
 const maxDelay = maxDelayMinutes * 60 * 1000;
 const delay = minDelay + Math.random() * (maxDelay - minDelay);
         
@@ -7301,8 +7303,10 @@ const delay = minDelay + Math.random() * (maxDelay - minDelay);
                     this.appData.waitingForReply = true;
                     this.startTypingIndicator();
                     
-                    const minDelay = (this.appData.sendSettings?.minReplyDelay || 1.5) * 1000;
-                    const maxDelay = (this.appData.sendSettings?.maxReplyDelay || 3.5) * 1000;
+                    const minDelaySeconds = this.appData.sendSettings?.minReplyDelay || 1.5;
+const maxDelayMinutes = this.appData.sendSettings?.maxReplyDelayMinutes || 3;
+const minDelay = minDelaySeconds * 1000;
+const maxDelay = maxDelayMinutes * 60 * 1000;
                     const delay = minDelay + Math.random() * (maxDelay - minDelay);
                     
                     setTimeout(() => {
@@ -8322,8 +8326,9 @@ if (saveThemeBtn) {
         this.appData.isTyping = true;
         this.renderMessages();
         
-        const minDelay = (this.appData.sendSettings?.minReplyDelay || 1.5) * 1000;
+        const minDelaySeconds = this.appData.sendSettings?.minReplyDelay || 1.5;
 const maxDelayMinutes = this.appData.sendSettings?.maxReplyDelayMinutes || 3;
+const minDelay = minDelaySeconds * 1000;
 const maxDelay = maxDelayMinutes * 60 * 1000;
 const delay = minDelay + Math.random() * (maxDelay - minDelay);
         
@@ -8940,9 +8945,11 @@ loadSavedTheme() {
             this.appData.waitingForReply = true;
             this.startTypingIndicator();
             
-            const minDelay = (this.appData.sendSettings?.minReplyDelay || 1.5) * 1000;
-            const maxDelay = (this.appData.sendSettings?.maxReplyDelay || 3.5) * 1000;
-            const delay = minDelay + Math.random() * (maxDelay - minDelay);
+            const minDelaySeconds = this.appData.sendSettings?.minReplyDelay || 1.5;
+const maxDelayMinutes = this.appData.sendSettings?.maxReplyDelayMinutes || 3;
+const minDelay = minDelaySeconds * 1000;
+const maxDelay = maxDelayMinutes * 60 * 1000;
+const delay = minDelay + Math.random() * (maxDelay - minDelay);
             
             setTimeout(() => {
                 if (this.appData.tarotSettings?.enabled && this.appData.tarotSettings.customPhrases?.length > 0) {
